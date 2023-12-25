@@ -13,10 +13,10 @@ func Get(t time.Time) YearMonth {
 }
 
 func (ym YearMonth) Year() int {
-	return int(ym) / 12
+	return int(ym-1) / 12
 }
 func (ym YearMonth) Month() time.Month {
-	return time.Month(ym % 12)
+	return time.Month((ym-1)%12 + 1)
 }
 
 // ISO 8601
